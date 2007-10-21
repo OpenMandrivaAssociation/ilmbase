@@ -5,7 +5,7 @@
 Summary:	Abraction/convenience libraries for OpenEXR
 Name:		ilmbase 
 Version:	1.0.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		System/Libraries
 License:	BSD
 URL:		http://www.openexr.com
@@ -44,8 +44,7 @@ Iex is an exception-handling library.
 Summary:	Development files for %{name}
 Group:		Development/C++
 Requires:	%{libname} = %{version}-%{release}
-Requires:	libGL-devel
-Requires:	libGLU-devel
+Requires:	mesaglu-devel
 Provides:	lib%{name}-devel = %{version0}-%{release}
 Provides:	%{name}-devel = %{version0}-%{release}
 

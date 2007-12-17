@@ -11,7 +11,6 @@ License:	BSD
 URL:		http://www.openexr.com
 Source0:	http://download.savannah.nongnu.org/releases/openexr/ilmbase-%{version}.tar.bz2
 Patch0:		%{name}-1.0.0-pthread.patch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Half is a class that encapsulates the ilm 16-bit floating-point format.

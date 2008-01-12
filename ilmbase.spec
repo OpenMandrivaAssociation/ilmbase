@@ -5,7 +5,7 @@
 Summary:	Abraction/convenience libraries for OpenEXR
 Name:		ilmbase 
 Version:	1.0.1
-Release:	%mkrel 4
+Release:	%mkrel 5
 Group:		System/Libraries
 License:	BSD
 URL:		http://www.openexr.com
@@ -47,6 +47,7 @@ Requires:	%{libname} = %{version}-%{release}
 Requires:	mesaglu-devel
 Provides:	lib%{name}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
+Conflicts:	OpenEXR-devel < 1.4.1
 
 %description -n %{develname}
 Development files for %{name}.

@@ -3,9 +3,9 @@
 %define develname %mklibname %{name} -d
 
 Summary:	Abraction/convenience libraries for OpenEXR
-Name:		ilmbase 
-Version:	1.0.1
-Release:	%mkrel 9
+Name:		ilmbase
+Version:	1.0.2
+Release:	%mkrel 1
 Group:		System/Libraries
 License:	BSD
 URL:		http://www.openexr.com
@@ -63,9 +63,6 @@ Development files for %{name}.
 	--disable-static
 
 %make
-
-%check
-make check
 
 %install
 rm -rf %{buildroot}

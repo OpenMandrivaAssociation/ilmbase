@@ -5,12 +5,13 @@
 Summary:	Abraction/convenience libraries for OpenEXR
 Name:		ilmbase
 Version:	1.0.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		System/Libraries
 License:	BSD
 URL:		http://www.openexr.com
 Source0:	http://download.savannah.nongnu.org/releases/openexr/ilmbase-%{version}.tar.bz2
 Patch0:		%{name}-1.0.0-pthread.patch
+Patch1:		%{name}-1.0.2-gcc43.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
@@ -55,6 +56,7 @@ Development files for %{name}.
 %prep
 %setup -q
 %patch0 -p1 -b .pthread
+%patch1 -p1 -b .gcc43
 
 ./bootstrap
 

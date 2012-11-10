@@ -1,0 +1,12 @@
+diff -Naur ilmbase-1.0.0/m4/threads.m4 ilmbase-1.0.0.tpg/m4/threads.m4
+--- ilmbase-1.0.0/m4/threads.m4	2006-12-13 22:51:56.000000000 +0000
++++ ilmbase-1.0.0.tpg/m4/threads.m4	2007-10-21 15:26:47.000000000 +0000
+@@ -87,7 +87,7 @@
+ # which indicates that we try without any flags at all, and "pthread-config"
+ # which is a program returning the flags for the Pth emulation library.
+ 
+-acx_pthread_flags="pthreads none -Kthread -kthread lthread -pthread -pthreads -mthreads pthread --thread-safe -mt pthread-config"
++acx_pthread_flags="pthreads none -Kthread -kthread lthread pthread -pthread -pthreads -mthreads --thread-safe -mt pthread-config"
+ 
+ # The ordering *is* (sometimes) important.  Some notes on the
+ # individual items follow:

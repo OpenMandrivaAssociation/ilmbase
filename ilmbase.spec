@@ -5,14 +5,13 @@
 Summary:	Abraction/convenience libraries for OpenEXR
 Name:		ilmbase
 Version:	1.0.2
-Release:	%mkrel 3
+Release:	5
 Group:		System/Libraries
 License:	BSD
 URL:		http://www.openexr.com
 Source0:	http://download.savannah.nongnu.org/releases/openexr/ilmbase-%{version}.tar.bz2
 Patch0:		%{name}-1.0.0-pthread.patch
 Patch1:		%{name}-1.0.2-gcc43.patch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Half is a class that encapsulates the ilm 16-bit floating-point format.
@@ -40,12 +39,11 @@ and other useful 2D and 3D math functions.
 
 Iex is an exception-handling library.
 
-
 %package -n %{develname}
 Summary:	Development files for %{name}
 Group:		Development/C++
 Requires:	%{libname} = %{version}-%{release}
-Requires:	mesaglu-devel
+Requires:	pkgconfig(glu)
 Provides:	lib%{name}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Conflicts:	OpenEXR-devel < 1.4.1
@@ -67,30 +65,83 @@ Development files for %{name}.
 %make
 
 %install
-rm -rf %{buildroot}
-
 %makeinstall_std
 
-rm -f  %{buildroot}%{_libdir}/lib*.la
-
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
 %files -n %{libname}
-%defattr(-,root,root,-)
 %{_libdir}/lib*.so.%{major}*
 
 %files -n %{develname}
-%defattr(-,root,root,-)
 %doc AUTHORS ChangeLog  NEWS README
 %{_includedir}/OpenEXR/
 %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/*
+
+%changelog
+* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 1.0.2-3mdv2011.0
++ Revision: 665507
+- mass rebuild
+
+* Mon Sep 20 2010 Tomas Kindl <supp@mandriva.org> 1.0.2-2mdv2011.0
++ Revision: 580288
+- add missing header to ImathMatrix.h so OpenEXR 1.7.0 would compile...
+
+* Sat Sep 04 2010 Tomasz Pawel Gajc <tpg@mandriva.org> 1.0.2-1mdv2011.0
++ Revision: 575899
+- update to new version 1.0.2
+- disable tests
+
+* Wed Mar 17 2010 Oden Eriksson <oeriksson@mandriva.com> 1.0.1-9mdv2010.1
++ Revision: 522921
+- rebuilt for 2010.1
+
+* Sat Sep 26 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.0.1-8mdv2010.0
++ Revision: 449342
+- rebuild for missing binaries
+
+* Wed Sep 02 2009 Christophe Fergeau <cfergeau@mandriva.com> 1.0.1-7mdv2010.0
++ Revision: 425331
+- rebuild
+
+* Tue Jun 17 2008 Thierry Vignaud <tv@mandriva.org> 1.0.1-6mdv2009.0
++ Revision: 221625
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Sat Jan 12 2008 Anssi Hannula <anssi@mandriva.org> 1.0.1-5mdv2008.1
++ Revision: 149384
+- devel conflicts with old OpenEXR-devel
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Wed Dec 19 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 1.0.1-4mdv2008.1
++ Revision: 133192
+- fix provides for devel package
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Wed Nov 28 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 1.0.1-3mdv2008.1
++ Revision: 113732
+- do not package COPYING file
+- somehow ilmbase-devel is not on hdlist :/
+
+* Sat Nov 17 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 1.0.1-2mdv2008.1
++ Revision: 109523
+- somehow this version is missing on mirrors
+
+* Tue Nov 06 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 1.0.1-1mdv2008.1
++ Revision: 106418
+- new version
+
+* Sun Oct 21 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 1.0.0-2mdv2008.1
++ Revision: 101047
+- fix requires for devel package
+
+* Sun Oct 21 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 1.0.0-1mdv2008.1
++ Revision: 100967
+- import ilmbase
+
+

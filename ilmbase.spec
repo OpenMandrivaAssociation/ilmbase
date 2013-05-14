@@ -12,9 +12,9 @@ Release:	7
 Group:		System/Libraries
 License:	BSD
 Url:		http://www.openexr.com
-Source0:	http://download.savannah.nongnu.org/releases/openexr/ilmbase-%{version}.tar.bz2
-Patch0:		%{name}-1.0.0-pthread.patch
-Patch1:		%{name}-1.0.2-gcc43.patch
+Source0:	http://download.savannah.nongnu.org/releases/openexr/%{name}-%{version}.tar.bz2
+Patch0:		ilmbase-1.0.0-pthread.patch
+Patch1:		ilmbase-1.0.2-gcc43.patch
 Patch2:		ilmbase-automake-1.13.patch
 
 %description
@@ -95,7 +95,7 @@ Development files for %{name}.
 %files -n %{libIex}
 %{_libdir}/libIex.so.%{major}*
 
-%files -n %{libIlmtThread}
+%files -n %{libIlmThread}
 %{_libdir}/libIlmThread.so.%{major}*
 
 %files -n %{libImath}

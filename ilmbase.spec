@@ -1,4 +1,4 @@
-%define major	11
+%define major 11
 %define devname %mklibname %{name} -d
 
 Summary:	Abraction/convenience libraries for OpenEXR
@@ -48,7 +48,7 @@ Development files for %{name}.
 ./bootstrap
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static
 
 %make
@@ -61,4 +61,3 @@ Development files for %{name}.
 %{_includedir}/OpenEXR/
 %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/*
-

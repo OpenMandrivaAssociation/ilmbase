@@ -10,6 +10,7 @@ License:	BSD
 Url:		http://www.openexr.com
 Source0:	http://download.savannah.nongnu.org/releases/openexr/%{name}-%{version}.tar.gz
 Patch0:		ilmbase-1.0.0-pthread.patch
+Patch1:		ilmbase-2.0-1-arm.patch
 
 %libpackage Iex 2_1 %{major}
 %libpackage IlmThread 2_1 %{major}
@@ -48,6 +49,7 @@ Development files for %{name}.
 ./bootstrap
 
 %build
+export CC=gcc
 %configure \
 	--disable-static
 

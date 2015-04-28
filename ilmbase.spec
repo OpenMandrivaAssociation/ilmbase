@@ -4,7 +4,7 @@
 Summary:	Abraction/convenience libraries for OpenEXR
 Name:		ilmbase
 Version:	2.1.0
-Release:	4
+Release:	5
 Group:		System/Libraries
 License:	BSD
 Url:		http://www.openexr.com
@@ -49,7 +49,6 @@ Development files for %{name}.
 ./bootstrap
 
 %build
-export CC=gcc
 %configure \
 	--disable-static
 

@@ -4,7 +4,7 @@
 Summary:	Abraction/convenience libraries for OpenEXR
 Name:		ilmbase
 Version:	2.1.0
-Release:	10
+Release:	11
 Group:		System/Libraries
 License:	BSD
 Url:		http://www.openexr.com

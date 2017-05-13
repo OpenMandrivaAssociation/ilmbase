@@ -1,4 +1,4 @@
-%define major 11
+%define major 12
 %define devname %mklibname %{name} -d
 
 Summary:	Abraction/convenience libraries for OpenEXR
@@ -19,10 +19,10 @@ Patch2:		ilmbase-2.2.0-glibc_iszero.patch
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(glu)
 
-%libpackage Iex 2_1 %{major}
-%libpackage IlmThread 2_1 %{major}
-%libpackage IexMath 2_1 %{major}
-%libpackage Imath 2_1 %{major}
+%libpackage Iex 2_2 %{major}
+%libpackage IlmThread 2_2 %{major}
+%libpackage IexMath 2_2 %{major}
+%libpackage Imath 2_2 %{major}
 %libpackage Half %{major}
 
 %description
@@ -39,10 +39,10 @@ Iex is an exception-handling library.
 %package -n %{devname}
 Summary:	Development files for %{name}
 Group:		Development/C++
-Requires:	%{mklibname Iex 2_1 %{major}} = %{EVRD}
-Requires:	%{mklibname IlmThread 2_1 %{major}} = %{EVRD}
-Requires:	%{mklibname IexMath 2_1 %{major}} = %{EVRD}
-Requires:	%{mklibname Imath 2_1 %{major}} = %{EVRD}
+Requires:	%{mklibname Iex 2_2 %{major}} = %{EVRD}
+Requires:	%{mklibname IlmThread 2_2 %{major}} = %{EVRD}
+Requires:	%{mklibname IexMath 2_2 %{major}} = %{EVRD}
+Requires:	%{mklibname Imath 2_2 %{major}} = %{EVRD}
 Requires:	%{mklibname Half %{major}} = %{EVRD}
 Provides:	%{name}-devel = %{version}-%{release}
 

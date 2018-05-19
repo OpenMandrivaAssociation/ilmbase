@@ -1,10 +1,10 @@
-%define major 12
+%define major 23
 %define devname %mklibname %{name} -d
 
 Summary:	Abraction/convenience libraries for OpenEXR
 Name:		ilmbase
-Version:	2.2.0
-Release:	2
+Version:	2.2.1
+Release:	1
 Group:		System/Libraries
 License:	BSD
 Url:		http://www.openexr.com

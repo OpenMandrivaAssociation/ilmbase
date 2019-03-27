@@ -51,7 +51,6 @@ Development files for %{name}.
 
 %prep
 %autosetup -p1
-%apply_patches
 
 ./bootstrap
 

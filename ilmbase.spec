@@ -12,7 +12,7 @@ Source0:	http://download.savannah.nongnu.org/releases/openexr/%{name}-%{version}
 # explicitly add $(PTHREAD_LIBS) to libIlmThread linkage (helps PTHREAD_LIBS workaround in %%build)
 Patch0:		ilmbase-2.2.0-no_undefined.patch
 # add Requires.private: gl glu to IlmBase.pc
-#Patch1:		ilmbase-1.0.3-pkgconfig.patch
+Patch1:		ilmbase-1.0.3-pkgconfig.patch
 # workaround glibc iszero macro
 # https://bugzilla.redhat.com/show_bug.cgi?id=1383552
 Patch2:		ilmbase-2.2.0-glibc_iszero.patch

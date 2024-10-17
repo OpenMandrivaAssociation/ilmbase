@@ -7,7 +7,7 @@ Version:	2.2.1
 Release:	7
 Group:		System/Libraries
 License:	BSD
-Url:		http://www.openexr.com
+Url:		https://www.openexr.com
 Source0:	http://download.savannah.nongnu.org/releases/openexr/%{name}-%{version}.tar.gz
 # explicitly add $(PTHREAD_LIBS) to libIlmThread linkage (helps PTHREAD_LIBS workaround in %%build)
 Patch0:		ilmbase-2.2.0-no_undefined.patch

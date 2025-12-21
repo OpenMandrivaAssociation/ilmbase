@@ -25,6 +25,11 @@ Patch2:		ilmbase-2.2.0-glibc_iszero.patch
 %libpackage Imath 2_2 %{major}
 %libpackage Half %{major}
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 Half is a class that encapsulates the ilm 16-bit floating-point format.
 
